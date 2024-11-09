@@ -16,6 +16,12 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <slot />
@@ -81,7 +87,13 @@ const { title, description } = Astro.props;
       padding: 0;
     }
     h1 {
+      font-size: 3em;
       margin: 0;
+      font-family: "Fredoka", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 700;
+      font-style: normal;
+      font-variation-settings: "wdth" 100;
     }
   }
   code {
