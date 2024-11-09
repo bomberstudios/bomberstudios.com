@@ -1,50 +1,99 @@
 ---
 interface Props {
-	title: string;
+  title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content=`${description}` />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
+
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  :root {
+    --accent: #f60;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+
+    color-scheme: light dark; /* To use: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark */
+    --orange-color: #ff6600;
+    --accent-color: #ff6600;
+
+    --black-10: oklch(from white calc(l * 0.95) c h);
+    --black-20: oklch(from white calc(l * 0.85) c h);
+    --black-30: oklch(from white calc(l * 0.75) c h);
+    --black-40: oklch(from white calc(l * 0.65) c h);
+    --black-50: oklch(from white calc(l * 0.55) c h);
+    --black-60: oklch(from white calc(l * 0.45) c h);
+    --black-70: oklch(from white calc(l * 0.35) c h);
+    --black-80: oklch(from white calc(l * 0.25) c h);
+    --black-90: oklch(from white calc(l * 0.15) c h);
+
+    --text-color: var(--black-70);
+
+    --alpha-10: rgb(from white r g b / 10%);
+    --alpha-20: rgb(from white r g b / 20%);
+    --alpha-30: rgb(from white r g b / 30%);
+    --alpha-40: rgb(from white r g b / 40%);
+    --alpha-50: rgb(from white r g b / 50%);
+    --alpha-60: rgb(from white r g b / 60%);
+    --alpha-70: rgb(from white r g b / 70%);
+    --alpha-80: rgb(from white r g b / 80%);
+    --alpha-90: rgb(from white r g b / 90%);
+    --alpha-100: rgb(from white r g b / 100%);
+
+    --button-border-color: light-dark(var(--black-50), var(--black-10));
+
+    --bip: 4px;
+    --spacing: var(--bip);
+    --spacing-half: calc(var(--spacing) / 2);
+
+    --border-radius: var(--bip);
+    --padding-vertical: calc(var(--spacing) * 2);
+    --padding-horizontal: calc(var(--spacing) * 4);
+
+    --font-size: 1em;
+  }
+  html {
+    color: #555;
+    font-family: system-ui, sans-serif;
+    background: rgb(255, 247, 242);
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      margin: 0;
+    }
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
 </style>

@@ -1,0 +1,13 @@
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button';
+
+export const handleClick = () => {
+  console.log('Yo');
+};
+
+<Layout title="React Test" description="This is a test page for React components">
+# This is a test page for React components
+
+<Button onClick={handleClick} client:load>Click me</Button>
+
+</Layout>
