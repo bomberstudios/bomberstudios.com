@@ -17,10 +17,8 @@ export const EnergyScore = ({ initialScore }: EnergyScoreProps) => {
   }
 
   const springConfig = {
-    type: "spring",
-    stiffness: 70,
-    damping: 8,
-    bounce: 150
+    type: "tween",
+    ease: "anticipate"
   }
 
   return (
