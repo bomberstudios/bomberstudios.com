@@ -16,11 +16,6 @@ export const EnergyScore = ({ initialScore }: EnergyScoreProps) => {
     setScore(Math.floor(Math.random() * 100));
   }
 
-  const springConfig = {
-    type: "tween",
-    ease: "anticipate"
-  }
-
   return (
     <div className={style.dial} onClick={randomValue}>
       <div className={style.score}>{score}</div>
@@ -41,8 +36,9 @@ export const EnergyScore = ({ initialScore }: EnergyScoreProps) => {
         initial={{ rotate: scoreToDegrees(score) }}
         animate={{ rotate: scoreToDegrees(score) }}
         transition={{
-          duration: 0.5,
-          ...springConfig
+          type: "tween",
+          ease: "anticipate",
+          duration: 1
         }}
       >
         <svg width="18" height="20" viewBox="0 0 18 20">
