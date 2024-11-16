@@ -1,0 +1,54 @@
+.dial {
+  padding: 16px;
+  width: 228px;
+  height: 180px;
+  background-color: #222230;
+  background: linear-gradient(0deg, #222230 0%, #444460 100%);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+  cursor: default;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none;
+}
+
+.dialBackground {
+  position: absolute;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, .4))
+}
+
+.score {
+  width: 228px;
+  height: 190px;
+  position: absolute;
+  font-size: 6rem;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Fredoka", sans-serif;
+}
+.scoreSubtitle {
+  font-size: 0.9rem;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 125px;
+}
+
+.triangle {
+  width: 226px;
+  position: relative;
+  left: 0;
+  top: 106px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  svg {
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, .7))
+  }
+}

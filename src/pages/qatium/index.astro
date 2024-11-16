@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { EnergyScore } from "./EnergyScore";
+---
+
+<Layout title="Qatium Experiments" description="Energy Efficiency">
+  <main>
+    <h1>Qatium Experiments</h1>
+    <h2>Energy Efficiency Plugin</h2>
+    <EnergyScore initialScore={42} client:only="react" />
+  </main>
+</Layout>

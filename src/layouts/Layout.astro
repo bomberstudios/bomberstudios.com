@@ -106,17 +106,27 @@ const { title, description } = Astro.props;
       Bitstream Vera Sans Mono,
       Courier New,
       monospace;
+    background-color: #eee;
+    padding: 0.1em 0.3em;
+    border-radius: 4px;
   }
   main {
     padding: 2em;
     margin: auto;
-    width: 80%
+    width: 80%;
     max-width: 400px;
     h1 {
       color: var(--accent);
     }
     p {
       line-height: 140%;
+    }
+    ul {
+      list-style: square;
+      padding: 0 0 0 1em;
+      li {
+        margin-bottom: 0.5em;
+      }
     }
   }
 </style>
