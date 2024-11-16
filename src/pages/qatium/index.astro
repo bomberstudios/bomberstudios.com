@@ -8,5 +8,15 @@ import { EnergyScore } from "./EnergyScore";
     <h1>Qatium Experiments</h1>
     <h2>Energy Efficiency Plugin</h2>
     <EnergyScore initialScore={42} client:only="react" />
+    <p>
+      Click the widget to randomize the value. The arrow will animate to its new
+      position, with an effect that's intentionally a bit over the top.
+    </p>
+    <h2>With <code>client:only</code> disabled</h2>
+    <EnergyScore initialScore={83} />
+    <p>
+      This widget is static, thanks to Astro's "push as little JavaScript as
+      possible by default" feature.
+    </p>
   </main>
 </Layout>

@@ -40,7 +40,7 @@ export const EnergyScore = ({ initialScore }: EnergyScoreProps) => {
       </div>
       <motion.div
         className={style.triangle}
-        // initial={{ rotate: scoreToDegrees(score) }}
+        initial={{ rotate: scoreToDegrees(score) }}
         animate={{ rotate: scoreToDegrees(score) }}
         transition={{
           duration: 0.5,
