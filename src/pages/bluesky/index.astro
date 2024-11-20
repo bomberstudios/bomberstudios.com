@@ -7,6 +7,11 @@ import Layout from "@layouts/Layout.astro";
     <h1>Bluesky Experiments</h1>
     <h2>Nice messages</h2>
     <p id="explanation"></p>
+    <p>
+      Thanks to <a href="https://javier.computer/bluesky/iam">Javier</a>
+      for the inspiration (and part of the code, which I stole without a trace of
+      regret).
+    </p>
     <div id="messages"></div>
   </main>
 </Layout>
@@ -58,17 +63,14 @@ import Layout from "@layouts/Layout.astro";
     handleMessage(event) {
       const data = JSON.parse(event.data);
       if (
-        data.commit &&
-        data.commit.record &&
-        data.commit.record.text &&
-        niceWords.some((word) => data.commit.record.text.includes(word)) &&
-        !badWords.some((word) => data.commit.record.text.includes(word))
+        niceWords.some((word) => data.commit?.record?.text?.includes(word)) &&
+        !badWords.some((word) => data.commit?.record?.text?.includes(word))
       ) {
         const messages = document.getElementById("messages");
         const message = document.createElement("div");
         message.className = "message";
         message.textContent = data.commit.record.text;
-        messages.appendChild(message);
+        messages?.prepend(message);
       }
     }
     connectWebSocket() {
