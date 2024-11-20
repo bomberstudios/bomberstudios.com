@@ -51,6 +51,10 @@ import Layout from "@layouts/Layout.astro";
     "JavaScript"
   ];
   class BlueSkyData {
+    ENDPOINT: string;
+    JETSTREAMS: string[];
+    ws: WebSocket;
+
     constructor() {
       this.ENDPOINT = "subscribe?wantedCollections=app.bsky.feed.post";
       this.JETSTREAMS = [
@@ -59,8 +63,11 @@ import Layout from "@layouts/Layout.astro";
         "wss://jetstream1.us-west.bsky.network",
         "wss://jetstream2.us-west.bsky.network"
       ];
+      const randomJetstream =
+        this.JETSTREAMS[Math.floor(Math.random() * this.JETSTREAMS.length)];
+      this.ws = new WebSocket(`${randomJetstream}/${this.ENDPOINT}`);
     }
-    handleMessage(event) {
+    handleMessage(event: any): void {
       const data = JSON.parse(event.data);
       if (
         niceWords.some((word) => data.commit?.record?.text?.includes(word)) &&
@@ -74,15 +81,15 @@ import Layout from "@layouts/Layout.astro";
       }
     }
     connectWebSocket() {
-      const randomJetstream =
-        this.JETSTREAMS[Math.floor(Math.random() * this.JETSTREAMS.length)];
-      this.ws = new WebSocket(`${randomJetstream}/${this.ENDPOINT}`);
       this.ws.onmessage = (event) => this.handleMessage(event);
     }
 
     init() {
       console.log("Hello, world!");
       const explanation = document.getElementById("explanation");
+      if (!explanation) {
+        return;
+      }
       explanation.textContent =
         "This page displays realtime messages from Bluesky that contain nice words, like " +
         niceWords.join(", ") +
