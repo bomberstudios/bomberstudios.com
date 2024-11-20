@@ -1,0 +1,95 @@
+---
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Bluesky Experiments" description="Some experiments with Bluesky">
+  <main>
+    <h1>Bluesky Experiments</h1>
+    <h2>Nice messages</h2>
+    <p id="explanation"></p>
+    <div id="messages"></div>
+  </main>
+</Layout>
+
+<style is:global>
+  .message {
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+  }
+</style>
+
+<script>
+  const niceWords = [
+    "happiness",
+    "happy",
+    "smile",
+    "wholesome",
+    "beauty",
+    "friendship",
+    "love",
+    "kindness"
+  ];
+  const badWords = [
+    "hate",
+    "anger",
+    "sadness",
+    "fear",
+    "disgust",
+    "ugly",
+    "enemy",
+    "violence",
+    "rape",
+    "fuck",
+    "kill",
+    "JavaScript"
+  ];
+  class BlueSkyData {
+    constructor() {
+      this.ENDPOINT = "subscribe?wantedCollections=app.bsky.feed.post";
+      this.JETSTREAMS = [
+        "wss://jetstream1.us-east.bsky.network",
+        "wss://jetstream2.us-east.bsky.network",
+        "wss://jetstream1.us-west.bsky.network",
+        "wss://jetstream2.us-west.bsky.network"
+      ];
+    }
+    handleMessage(event) {
+      const data = JSON.parse(event.data);
+      if (
+        data.commit &&
+        data.commit.record &&
+        data.commit.record.text &&
+        niceWords.some((word) => data.commit.record.text.includes(word)) &&
+        !badWords.some((word) => data.commit.record.text.includes(word))
+      ) {
+        const messages = document.getElementById("messages");
+        const message = document.createElement("div");
+        message.className = "message";
+        message.textContent = data.commit.record.text;
+        messages.appendChild(message);
+      }
+    }
+    connectWebSocket() {
+      const randomJetstream =
+        this.JETSTREAMS[Math.floor(Math.random() * this.JETSTREAMS.length)];
+      this.ws = new WebSocket(`${randomJetstream}/${this.ENDPOINT}`);
+      this.ws.onmessage = (event) => this.handleMessage(event);
+    }
+
+    init() {
+      console.log("Hello, world!");
+      const explanation = document.getElementById("explanation");
+      explanation.textContent =
+        "This page displays realtime messages from Bluesky that contain nice words, like " +
+        niceWords.join(", ") +
+        ".";
+      this.connectWebSocket();
+    }
+  }
+  window.onload = function () {
+    const tracker = new BlueSkyData();
+    tracker.init();
+  };
+</script>
