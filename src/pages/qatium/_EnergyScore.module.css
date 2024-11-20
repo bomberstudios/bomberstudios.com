@@ -28,8 +28,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Fredoka", sans-serif;
   text-shadow: 0 0 4px rgba(0, 0, 0, .4);
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
 }
 .scoreSubtitle {
   font-size: 0.9rem;

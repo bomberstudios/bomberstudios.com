@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import style from "./EnergyScore.module.css";
+import style from "./_EnergyScore.module.css";
 import { useState } from 'react';
 
 interface EnergyScoreProps {
