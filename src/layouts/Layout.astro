@@ -24,6 +24,21 @@ const { title, description } = Astro.props;
     />
   </head>
   <body>
+    <header>
+      <a href="/">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 0L16 6V14C16 15.1046 15.1046 16 14 16H2C0.895431 16 0 15.1046 0 14V6L8 0Z"
+            fill="#FF6600"></path>
+        </svg>
+      </a>
+    </header>
     <slot />
   </body>
 </html>
@@ -86,6 +101,28 @@ const { title, description } = Astro.props;
       margin: 0;
       padding: 0;
     }
+    header {
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1em;
+      backdrop-filter: blur(var(--bip));
+      background: rgba(255, 255, 255, 0.4);
+      * {
+        transition: all 300ms;
+      }
+      a {
+        margin-right: 1em;
+        text-decoration: none;
+        color: var(--accent);
+        opacity: 0.3;
+      }
+      a:hover {
+        opacity: 1;
+      }
+    }
     h1 {
       font-size: 3em;
       margin: 0;
@@ -112,6 +149,7 @@ const { title, description } = Astro.props;
   }
   main {
     padding: 2em;
+    padding-top: 3em;
     margin: auto;
     width: 80%;
     max-width: 800px;
