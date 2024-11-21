@@ -12,9 +12,6 @@ export const Toggle = ({ enabled = true }) => {
       animate={{
         backgroundColor: isOn ? '#62c357' : '#cccccc',
       }}
-      transition={{
-        duration: 0.5,
-      }}
     >
       <motion.div
         className={style.handle}
