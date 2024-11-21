@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import { EnergyScore } from "./_EnergyScore";
+import { Toggle } from "./_Toggle";
 ---
 
 <style>
@@ -10,6 +11,8 @@ import { EnergyScore } from "./_EnergyScore";
 <Layout title="Qatium Experiments" description="Energy Efficiency">
   <main>
     <h1>Qatium Experiments</h1>
+    <h2>Toggle On / Off</h2>
+    <Toggle client:only="react" />
     <h2>Energy Efficiency Plugin</h2>
     <EnergyScore initialScore={42} client:only="react" />
     <p>
