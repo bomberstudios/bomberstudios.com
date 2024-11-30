@@ -13,11 +13,9 @@
 .position {
   position: absolute;
   width: 150px;
-  height: 50px;
   left: 50%;
   top: 50%;
   margin-left: -75px;
-  margin-top: -25px;
   z-index: 10;
 }
 
