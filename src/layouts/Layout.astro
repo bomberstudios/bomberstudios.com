@@ -5,6 +5,7 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+import HomeLogo from "@images/home.svg";
 ---
 
 <!doctype html>
@@ -26,17 +27,7 @@ const { title, description } = Astro.props;
   <body>
     <header>
       <a href="/" aria-label="Back home">
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M8 0L16 6V14C16 15.1046 15.1046 16 14 16H2C0.895431 16 0 15.1046 0 14V6L8 0Z"
-            fill="#FF6600"></path>
-        </svg>
+        <HomeLogo fill="var(--accent)" />
       </a>
     </header>
     <slot />
@@ -143,9 +134,19 @@ const { title, description } = Astro.props;
       a {
         margin-right: 1em;
         opacity: 0.3;
+        svg {
+          transition: all 200ms;
+          transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+          scale: 1;
+          rotate: 0;
+        }
       }
       a:hover {
         opacity: 1;
+        svg {
+          scale: 2;
+          rotate: -90deg;
+        }
       }
     }
     h1 {
