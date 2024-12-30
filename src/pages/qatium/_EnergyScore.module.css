@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@900&display=swap");
+
 .dial {
   padding: 16px;
-  width: 228px;
-  height: 180px;
+  width: 260px;
+  height: 210px;
   background-color: #222230;
   background: linear-gradient(0deg, #222230 0%, #444460 100%);
   border-radius: 16px;
@@ -22,7 +24,7 @@
   width: 228px;
   height: 190px;
   position: absolute;
-  font-size: 6rem;
+  font-size: 4rem;
   color: white;
   font-weight: bold;
   display: flex;
