@@ -51,6 +51,7 @@ main {
   }
 
   section {
+    padding: 0 2rem;
     &.text {
       max-inline-size: var(--measure);
       margin: 0 auto;
@@ -84,7 +85,7 @@ main {
         }
       }
       img {
-        max-inline-size: var(--measure);
+        max-inline-size: 100%;
         border-radius: 1rem;
         box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
         height: auto;
