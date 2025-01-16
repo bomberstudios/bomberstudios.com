@@ -114,6 +114,9 @@ main {
         border: none;
       }
     }
+    &:nth-last-child(1) {
+      padding-bottom: 20ch;
+    }
   }
   a {
     color: var(--accent);
