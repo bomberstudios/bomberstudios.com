@@ -1,0 +1,143 @@
+---
+import "./portfolio.css";
+import Blank from "@layouts/Blank.astro";
+import Image from "astro/components/Image.astro";
+import { EnergyScore } from "@components/EnergyScore";
+
+import eemockup from "@images/ee-mockup.png";
+import eealgo from "@images/ee-algo.png";
+import eesketches from "@images/ee-sketches.png";
+import eeformulas from "@images/ee-formulas.png";
+---
+
+<Blank title="Portfolio" description="Ale Muñoz's Portfolio">
+  <main>
+    <section class="text">
+      <h1>Hi, I’m Ale Muñoz!</h1>
+      <p>
+        I <strong>love</strong> design. I <strong>love</strong> code.
+      </p>
+      <p>I also love orange, but can use other colors.</p>
+
+      <p>
+        I've worked at the intersection of design and technology for as long as
+        I can remember. I'm comfortable with all steps of the product process,
+        and can do 0 to 1 product development, but my true passion is designing
+        things and making them real.
+      </p>
+      <p>
+        As a designer with many years of experience, I use both my skills and my
+        <em>intuition</em> to create simple solutions to complex problems. I enjoy
+        my craft and love to work on the details, but I always try to reach the sweet
+        spot between “this is perfect” and “we need this yesterday”.
+      </p>
+      <p>
+        These are some recent projects that (I believe) illustrate these points.
+      </p>
+    </section>
+
+    <section class="text">
+      <h2>Recent projects</h2>
+    </section>
+
+    <section class="text">
+      <h3>Energy Efficiency</h3>
+      <h4>📅 Qatium, 2024 – 2025</h4>
+      <h5>🛠️ Research, ideation, design and front end development.</h5>
+      <p>
+        This project started with a surprise meeting on a random Wednesday. I
+        got a ping from the sales team, asking me to join a call with a
+        potential client the next day, and was given a couple of recordings of
+        the client's previous meetings to get up to speed. I also had a PDF with
+        formulas like this one:
+      </p>
+      <figure>
+        <Image src={eeformulas} alt="Energy Efficiency Formulas" />
+        <figcaption>
+          Fun fact: the PDF used low resolution images for the formulas, so I
+          used
+          <a href="https://chatgpt.com/g/g-79erpntCe-image-to-latex-converter"
+            >ChatGPT</a
+          > to translate the image of the formula to LaTeX, which I then pasted into
+          an <a href="https://latexeditor.lagrida.com">online LaTeX editor</a> to
+          get a high resolution version of it that I could screenshot for this website.
+        </figcaption>
+      </figure>
+      <p>
+        I spent the rest of the day watching recordings, reading transcripts and
+        the PDF, and having an express meeting with one of our hydraulic
+        engineers, who explained the formulas to me.
+      </p>
+      <p>
+        The next day, I joined the call with the client, got some very good
+        ideas from listening to them, and by the end of the day I had a rough
+        sketch of the plugin we were going to build:
+      </p>
+      <Image src={eesketches} alt="Energy Efficiency Sketches" />
+      <p>
+        Calculating the energy efficiency of a network in terms our customers
+        want to see (money, basically) is not trivial for multiple reasons.
+        Instead, I came up with an idea to calculate a unit-less energy
+        efficiency score for their water networks, similar to what you see in
+        sport watches. This would allow our customers to compare their networks
+        with each other, and with other networks in the app, to hopefully
+        motivate them to improve their score.
+      </p>
+    </section>
+    <section class="text">
+      <p>
+        Once I validated the idea with our hydraulic engineer and our sales
+        team, I started working on a static mockup of the feature on Figma:
+      </p>
+    </section>
+    <section class="image">
+      <Image src={eemockup} alt="Energy Efficiency Mockup" />
+    </section>
+
+    <section class="text">
+      <p>
+        Simultaneously, I worked on a rough algorithm to calculate the Energy
+        Efficiency Score, using <a href="https://developer.qatium.app"
+          >our platform's SDK</a
+        >. It also rendered the energy efficiency for pipes on the map, using a
+        color scale:
+      </p>
+    </section>
+    <section class="image">
+      <Image src={eealgo} alt="Energy Efficiency Algorithm" />
+    </section>
+
+    <section class="text">
+      <p>
+        Once I was reasonably sure that our clients would find the feature
+        useful, I started working on the front end. <a
+          href="https://qatium.github.io/app/components/">Our design system</a
+        > already had many of the components I needed, but I had to create a new
+        one: the radial progress bar.
+      </p>
+      <p>
+        For that, I used TypeScript, React and SVG, and wrote an isolated
+        component in Storybook that we could use in other parts of the app. I
+        also had to add a new layout component, <a
+          href="https://qatium.github.io/app/components/?path=/docs/components-zstack--documentation"
+          >ZStack</a
+        >, to take care of the special needs for this component. I also added
+        some animations to make the score change more fun:
+      </p>
+    </section>
+    <section class="image">
+      <EnergyScore initialScore={42} client:only="react" />
+      <p>Click the widget to randomize the value.</p>
+    </section>
+
+    <section class="text">
+      <p>
+        The feature was a success, and we got a lot of positive feedback from
+        our clients. I also learned a lot about energy efficiency, and how to
+        calculate it for water networks. I'm very proud of this project, and
+        happy to have been part of it.
+      </p>
+      <p>Hope you liked it!</p>
+    </section>
+  </main>
+</Blank>
