@@ -5,6 +5,7 @@
   --accent: #ff6600;
   --accent-reverse: #fff;
   --subtle: #9C9C9C;
+  --subtler: #ddd;
 }
 main {
   color: #555;
@@ -37,6 +38,23 @@ main {
   }
   p {
     line-height: 140%;
+    &.lead {
+      background-color: oklch(from var(--subtle) calc(l + 0.25) c h);
+      padding: 1em;
+      border-radius: 8px;
+      margin: 1em -1em;
+      text-wrap: pretty;
+      &::before {
+        content: 'TLDR';
+        display: block;
+        margin: 0;
+        margin-top: -0.5em;
+        padding: 0; 
+        font-size: 0.7em;
+        font-weight: 700;
+        color: var(--accent);
+      }
+    }
   }
   ul {
     list-style: square;
@@ -55,6 +73,9 @@ main {
     &.text {
       max-inline-size: var(--measure);
       margin: 0 auto;
+      h2 {
+        margin-block-end: 1rem;
+      }
       h3 {
         font-weight: 150;
         margin-block-end: 1rem;
@@ -86,11 +107,9 @@ main {
       }
       img {
         max-inline-size: 100%;
-        border-radius: 1rem;
-        box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
         height: auto;
         &.border {
-          border: 1px solid var(--subtle);
+          border: 1px solid var(--subtler);
         }
       }
     }

@@ -8,6 +8,7 @@ import eemockup from "@images/ee-mockup.png";
 import eealgo from "@images/ee-algo.png";
 import eesketches from "@images/ee-sketches.png";
 import eeformulas from "@images/ee-formulas.png";
+import eecode from "@images/ee-code.png";
 ---
 
 <Blank
@@ -41,8 +42,13 @@ import eeformulas from "@images/ee-formulas.png";
 
     <section class="text">
       <h2>Energy Efficiency</h2>
-      <h5>📅 Qatium, 2024 – 2025</h5>
-      <h5>🛠️ Research, ideation, design and front end development.</h5>
+      <h5>Client: Qatium, 2025</h5>
+      <h5>Tools: Research, ideation, design and front end development.</h5>
+      <p class="lead">
+        I took a project from 0 to 1 in 4 days, starting with a vague definition
+        of the problem and ending with a fully formed feature that our clients
+        loved.
+      </p>
       <p>
         This project started with a surprise meeting on a random Wednesday. I
         got a ping from the sales team, asking me to join a call with a
@@ -72,7 +78,7 @@ import eeformulas from "@images/ee-formulas.png";
         ideas from listening to them, and by the end of the day I had a rough
         sketch of the plugin we were going to build:
       </p>
-      <Image src={eesketches} alt="Energy Efficiency Sketches" />
+      <Image class="border" src={eesketches} alt="Energy Efficiency Sketches" />
       <p>
         Calculating the energy efficiency of a network in terms our customers
         want to see (money, basically) is not trivial for multiple reasons.
@@ -120,9 +126,14 @@ import eeformulas from "@images/ee-formulas.png";
         also had to add a new layout component, <a
           href="https://qatium.github.io/app/components/?path=/docs/components-zstack--documentation"
           >ZStack</a
-        >, to take care of the special needs for this component. I also added
-        some animations to make the score change more fun:
+        >, to take care of the special needs for this component.
       </p>
+    </section>
+    <section class="image">
+      <Image src={eecode} alt="Energy Efficiency Code" />
+    </section>
+    <section class="text">
+      <p>I also added some animations to make the score change more fun:</p>
     </section>
     <section class="image">
       <EnergyScore initialScore={42} client:only="react" />
