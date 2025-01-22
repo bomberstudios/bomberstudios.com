@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "astro:upgrade": "npm install astro@latest"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -15,9 +16,7 @@
     "@astrojs/react": "^4",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "astro": "^5.1.0",
-    "file-saver": "^2.0.5",
-    "jszip": "^3.10.1",
+    "astro": "^5.1.8",
     "motion": "^11.15",
     "react": "^18",
     "react-dom": "^18",
