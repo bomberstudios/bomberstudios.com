@@ -3,6 +3,8 @@ import Case from "@layouts/Case.astro";
 import Image from "astro/components/Image.astro";
 import { EnergyScore } from "@components/EnergyScore";
 
+import { CaseSummary } from "@components/CaseSummary";
+
 import eemockup from "@images/ee-mockup.png";
 import eealgo from "@images/ee-algo.png";
 import eesketches from "@images/ee-sketches.png";
@@ -11,14 +13,13 @@ import eecode from "@images/ee-code.png";
 
 <Case title="Energy Efficiency">
   <main>
+    <CaseSummary
+      title="Energy Efficiency"
+      client="Qatium, 2025"
+      tools="Research, ideation, design (Figma) and front end development (TypeScript, React, SVG, Storybook)"
+      tldr="I took a project from 0 to 1 in 4 days. I started with a vague definition of the problem and some raw materials and, collaborating with sales, clients and engineers, came up with a fully formed feature that our clients loved." />
+
     <section class="text">
-      # Energy Efficiency
-
-      ##### **Client:** Qatium, 2025
-      ##### **Tools:** Research, ideation, design (Figma) and front end development (TypeScript, React, SVG, Storybook)
-
-      <p class="lead">I took a project from 0 to 1 in 4 days. I started with a vague definition of the problem and some raw materials and, collaborating with sales, clients and engineers, came up with a fully formed feature that our clients loved.</p>
-
       ## Problem
 
       Create a feature that allows our clients to **calculate the energy efficiency of their water networks**, and compare them with other networks in the app.

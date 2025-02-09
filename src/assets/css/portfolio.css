@@ -8,15 +8,18 @@
   --accent-reverse: #fff;
   --subtle: #9C9C9C;
   --subtler: #ddd;
+  --subtlest: #eee;
   --font-weight: 400;
 }
+
 @media screen and (width > 800px) {
   :root {
     --base-size: 1.1rem;
-    --scale: 1.4;
+    --scale: 1.3;
     --font-weight: 300;
   }
 }
+
 main {
   color: #555;
   font-size: calc(var(--base-size) * var(--scale));
@@ -26,58 +29,45 @@ main {
   h2,
   h3 {
     color: var(--accent);
-    font-weight: calc(var(--font-weight) * var(--scale));
+    font-weight: calc(var(--font-weight) / var(--scale));
     hyphens: auto;
   }
+
   h1 {
     margin-inline-start: -4px;
     font-weight: calc(var(--font-weight) / var(--scale));
-    font-size: calc(
-      var(--base-size) * var(--scale) * var(--scale) * var(--scale) *
-        var(--scale)
-    );
+    font-size: calc(var(--base-size) * var(--scale) * 2.5);
   }
+
   h2 {
     margin-inline-start: -3px;
-    font-size: calc(
-      var(--base-size) * var(--scale) * var(--scale) * var(--scale)
-    );
+    font-size: calc(var(--base-size) * var(--scale) * var(--scale) * var(--scale));
   }
+
   h3 {
     margin-inline-start: -1px;
     font-size: calc(var(--base-size) * var(--scale) * var(--scale));
   }
-  p {
+
+  p,
+  li {
     line-height: 140%;
     hyphens: auto;
-    &.lead {
-      background-color: oklch(from var(--subtle) calc(l + 0.25) c h);
-      padding: 1em;
-      border-radius: 8px;
-      margin: 1em -1em;
-      text-wrap: pretty;
-      &::before {
-        content: 'TLDR';
-        display: block;
-        margin: 0;
-        margin-top: -0.5em;
-        padding: 0; 
-        font-size: 0.7em;
-        font-weight: 700;
-        color: var(--accent);
-      }
-    }
   }
+
   ul,
   ol {
     padding: 0 0 0 1em;
+
     li {
       margin-bottom: 0.5em;
     }
   }
+
   ul {
     list-style: square;
   }
+
   strong {
     color: var(--accent);
     font-weight: 600;
@@ -85,52 +75,118 @@ main {
 
   section {
     padding: 0 2rem;
+
     &.text {
       max-inline-size: var(--measure);
       margin: 0 auto;
+
       &.case {
         margin: 8rem auto;
       }
+
+      &.case-summary {
+        margin-bottom: 4rem;
+
+        h1 {
+          letter-spacing: -0.05rem;
+          margin-bottom: 0;
+          /* hyphens: auto; */
+          text-wrap: pretty;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          color: var(--subtle);
+          font-size: 1rem;
+          font-weight: 500;
+
+          li {
+            display: flex;
+            flex-direction: row;
+            text-transform: uppercase;
+            strong {
+              width: 6ch;
+              text-align: right;
+              padding-right: 0.5rem;
+              font-weight: 700;
+            }
+            span {
+              flex: 1;
+            }
+          }
+        }
+
+        .lead {
+          border-left: 0.5rem solid var(--accent);
+          background-color: var(--subtlest);
+          padding: 1em;
+          margin: 1.5em -1em;
+          text-wrap: pretty;
+
+          &::before {
+            content: 'TLDR';
+            display: block;
+            margin: 0;
+            margin-top: -0.5em;
+            padding: 0;
+            font-size: 0.7em;
+            font-weight: 700;
+            color: var(--accent);
+          }
+        }
+
+      }
+
       h2 {
         margin-block-end: 1rem;
       }
+
       h3 {
         font-weight: 150;
         margin-block-end: 1rem;
       }
+
       h4 {
         margin: 0;
         font-size: 1.4rem;
         font-weight: 400;
         color: var(--subtle);
       }
+
       h5 {
         margin: 1rem 0;
         font-size: 1.4rem;
         font-weight: 400;
         color: var(--subtle);
       }
+
       figure {
         display: block;
         max-inline-size: calc(var(--measure) - 2rem);
         margin: 1rem 0;
+
         img {
           width: 100%;
         }
+
         figcaption {
           color: oklch(from var(--subtle) calc(l - 0.2) c h);
           font-size: 0.9rem;
           text-align: center;
         }
       }
+
       img {
         max-inline-size: 100%;
         height: auto;
+
         &.border {
           border: 1px solid var(--subtler);
         }
       }
     }
+
     &.image {
       h3 {
         text-align: center;
@@ -139,18 +195,21 @@ main {
         color: #333;
         margin: 0 0 2rem 0;
       }
+
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 2rem;
       background-color: var(--subtle);
+
       img {
         height: auto;
         max-inline-size: 100%;
         display: block;
         margin: 0 auto;
       }
+
       /* Figma embeds */
       iframe {
         display: block;
@@ -158,6 +217,7 @@ main {
         height: 60ch;
         border: none;
       }
+
       video {
         display: block;
         width: 100%;
@@ -167,24 +227,29 @@ main {
         outline: 2px solid black;
         outline-offset: -2px;
       }
+
       &.scrollable {
         display: block;
         max-height: 80vh;
         overflow-y: auto;
+
         img {
           width: 100%;
           max-width: 2000px;
         }
       }
     }
+
     &:nth-last-child(1) {
       padding-bottom: 20ch;
     }
   }
+
   a {
     color: var(--accent);
     text-decoration: none;
     transition: all 0.2s;
+
     &:hover {
       background-color: var(--accent);
       color: var(--accent-reverse);

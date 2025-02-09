@@ -1,14 +1,7 @@
 ---
 import "@styles/portfolio.css";
 import Blank from "@layouts/Blank.astro";
-import Image from "astro/components/Image.astro";
-import { EnergyScore } from "@components/EnergyScore";
-
-import eemockup from "@images/ee-mockup.png";
-import eealgo from "@images/ee-algo.png";
-import eesketches from "@images/ee-sketches.png";
-import eeformulas from "@images/ee-formulas.png";
-import eecode from "@images/ee-code.png";
+import { CaseSummary } from "@components/CaseSummary";
 ---
 
 <Blank
@@ -42,32 +35,20 @@ import eecode from "@images/ee-code.png";
       </p>
     </section>
 
-    <section class="text case">
-      <h2><a href="/portfolio/energy-efficiency">Energy Efficiency</a></h2>
-      <h5>Client: Qatium, 2025</h5>
-      <h5>Tools: Research, ideation, design and front end development.</h5>
-      <p class="lead">
-        I took a project from 0 to 1 in 4 days. I started with a vague
-        definition of the problem and some raw materials and, collaborating with
-        sales, clients and engineers, came up with a fully formed feature that
-        our clients loved.
-      </p>
-    </section>
+    <CaseSummary
+      title="Energy Efficiency"
+      client="Qatium, 2025"
+      tools="Research, ideation, design and front end development."
+      tldr="I took a project from 0 to 1 in 4 days. I started with a vague definition of the problem and some raw materials and, collaborating with sales, clients and engineers, came up with a fully formed feature that our clients loved."
+      link="/portfolio/energy-efficiency"
+    />
 
-    <section class="text case">
-      <h2>
-        <a href="/portfolio/qatium-search-improvements"
-          >Improvements to Search feature</a
-        >
-      </h2>
-      <h5>Client: Qatium, 2025</h5>
-      <h5>
-        Tools: Ideation, sketching, coding (TypeScript, CSS), testing (Jest).
-      </h5>
-      <p class="lead">
-        I improved the UX for a feature using as little time as possible, going
-        straight to code once a design decision was made.
-      </p>
-    </section>
+    <CaseSummary
+      title="Improvements to Search feature"
+      client="Qatium, 2025"
+      tools="Ideation, sketching, coding (TypeScript, CSS), testing (Jest)."
+      tldr="I improved the UX for a feature using as little time as possible, going straight to code once a design decision was made."
+      link="/portfolio/qatium-search-improvements"
+    />
   </main>
 </Blank>
