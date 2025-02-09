@@ -3,7 +3,7 @@
 :root {
   --base-size: 1.1rem;
   --scale: 1.5;
-  --measure: 50ch;
+  --measure: 55ch;
   --accent: #ff6600;
   --accent-reverse: #fff;
   --subtle: #9C9C9C;
@@ -40,6 +40,7 @@ main {
   }
   p {
     line-height: 140%;
+    hyphens: auto;
     &.lead {
       background-color: oklch(from var(--subtle) calc(l + 0.25) c h);
       padding: 1em;
@@ -58,12 +59,15 @@ main {
       }
     }
   }
-  ul {
-    list-style: square;
+  ul,
+  ol {
     padding: 0 0 0 1em;
     li {
       margin-bottom: 0.5em;
     }
+  }
+  ul {
+    list-style: square;
   }
   strong {
     color: var(--accent);
@@ -116,6 +120,13 @@ main {
       }
     }
     &.image {
+      h3 {
+        text-align: center;
+        font-size: 1.6rem;
+        font-weight: 200;
+        color: #333;
+        margin: 0 0 2rem 0;
+      }
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -134,6 +145,24 @@ main {
         width: 100%;
         height: 60ch;
         border: none;
+      }
+      video {
+        display: block;
+        width: 100%;
+        max-width: 2000px;
+        height: auto;
+        border-radius: 12px;
+        outline: 2px solid black;
+        outline-offset: -2px;
+      }
+      &.scrollable {
+        display: block;
+        max-height: 800px;
+        overflow-y: auto;
+        img {
+          width: 100%;
+          max-width: 2000px;
+        }
       }
     }
     &:nth-last-child(1) {

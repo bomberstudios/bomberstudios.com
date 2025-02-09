@@ -1,0 +1,73 @@
+import '../_portfolio.css';
+import Blank from "@layouts/Blank.astro";
+import Image from "astro/components/Image.astro";
+import codeChanges from "@images/app-13033.png";
+
+<Blank title="Improvements to Search feature">
+  <main>
+    <section class="text">
+      # Improvements to Search feature
+
+      ##### **Client:** Qatium, 2025
+      ##### **Tools:** Ideation, sketching, coding (TypeScript, CSS), testing (Jest)
+
+      <p class="lead">Fixed the UX for a feature using as little time as possible, going straight to code once a design decision was made.</p>
+
+      ## Problem
+
+      Some users have reported that the behavior of the search feature is very confusing.
+
+      A quick analysis shows that the main issue is that **the visual design doesn't match the behavior of the feature**, and users are making wrong assumptions about how Search works.
+
+      To be more specific:
+
+      - On first load, there's a disabled button that doesn't give any feedback about what it does or why it's disabled.
+      - The button shows a funnel icon, which makes it look like a filter button, but that's not what it does.
+      - The button is only enabled when the user selects a search result.
+      - Once the button is clicked, it opens a list of asset types the user can select to _highlight_ nearby assets of that type on the map.
+    </section>
+    <section class="image">
+      ### Before the changes
+      <video src="/video/01-before.mov" autoplay loop muted playsinline></video>
+    </section>
+    <section class="text">
+      ## Solution
+
+      The design team (3 people) got together for a quick work session and discussed different ways to improve the UX of the search plugin. At a high level, we identified two possible solutions:
+
+      1. Change the behavior of the feature to match the visual design, by making the button a filter button. This would require a non trivial amount of work, as the backend would need to be updated to support this new feature. We'd also need to update the design of the Search panel to accommodate the new behavior while keeping the existing functionality.
+      2. Change the visual design to match the behavior of the feature. This would be a simpler change that we could implement quickly.
+
+      We decided to go with the second option, to ship a quick fix and improve the UX of the feature as soon as possible. We can live without a filter feature by now, and add one in the future if user feedback suggests it's necessary.
+
+      ## Implementation
+
+      The implementation of the fix was straightforward: we removed all extra UI and interactions that were confusing users, and added a text label to the list of asset types to make it clear how the feature works.
+
+      We sketched a quick mockup of the new on a throwaway whiteboard, and then implemented the changes directly in the codebase. While we were at it, we also fixed a couple of minor issues with the layout of the Search panel, and took the opportunity to refactor some of the code to use components from our design system.
+
+      Some tests were updated to reflect the new behavior, and as a bonus we deleted more lines of code than we added, which is always a good sign.
+    </section>
+    <section class="image">
+      ### After the changes
+      <video src="/video/02-after.mov" autoplay loop muted playsinline></video>
+    </section>
+    <section class="image scrollable">
+      ### Code changes
+      <Image src={codeChanges} alt="Code changes for the fixes" />
+    </section>
+
+    <section class="text">
+      ## Results
+
+      The new design was deployed to production and **user feedback was immediately positive**. Users reported that the feature was now much easier to understand and use. On top of that, we actually saw an **increase in the amount and quality of feedback** we received about the feature now that it was easier to find.
+
+      ## Learnings
+
+      The main learning from this project is that **sometimes the best solution is the simplest one**. We could have spent a lot of time and effort trying to change the behavior of the feature to match the visual design, but in the end, the simplest solution was to change the visual design to match the behavior.
+    </section>
+    <section class="text">
+      <a href="/portfolio">Back to portfolio</a>
+    </section>
+  </main>
+</Blank>
