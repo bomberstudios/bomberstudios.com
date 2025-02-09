@@ -79,6 +79,9 @@ main {
     &.text {
       max-inline-size: var(--measure);
       margin: 0 auto;
+      &.case {
+        margin: 8rem auto;
+      }
       h2 {
         margin-block-end: 1rem;
       }
