@@ -2,8 +2,8 @@
 
 :root {
   --base-size: 1.1rem;
-  --scale: 1.5;
-  --measure: 55ch;
+  --scale: 1.4;
+  --measure: 50ch;
   --accent: #ff6600;
   --accent-reverse: #fff;
   --subtle: #9C9C9C;
@@ -19,6 +19,7 @@ main {
   h3 {
     color: var(--accent);
     font-weight: 100;
+    hyphens: auto;
   }
   h1 {
     margin-inline-start: -4px;
@@ -154,13 +155,13 @@ main {
         width: 100%;
         max-width: 2000px;
         height: auto;
-        border-radius: 12px;
+        border-radius: 0.5rem;
         outline: 2px solid black;
         outline-offset: -2px;
       }
       &.scrollable {
         display: block;
-        max-height: 800px;
+        max-height: 80vh;
         overflow-y: auto;
         img {
           width: 100%;
