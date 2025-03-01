@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import HeaderLink from "@components/HeaderLink.astro";
+import logo from "@images/favicon.svg";
+
+const { sticky } = Astro.props;
+---
+
+<header class={sticky ? "sticky" : ""}>
+  <div class="internal-links">
+    <HeaderLink href="/">
+      <Image src={logo} alt="Logo" width={40} height={40} loading="eager" />
+    </HeaderLink>
+    <HeaderLink href="/projects">Projects</HeaderLink>
+    <HeaderLink href="https://ale.today">Blog ›</HeaderLink>
+  </div>
+</header>
+
+<style>
+  header {
+    width: fit-content;
+    margin: 0 auto;
+    border: 1px solid #ff660011;
+    background-color: var(--header-bg);
+    border-radius: 999px;
+    padding: 0.5rem 1.5rem 0.5rem 0.55rem;
+    text-align: center;
+
+    a {
+      color: var(--header-text);
+    }
+
+    background-color: #fff9;
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+
+    &.sticky {
+      position: sticky;
+      top: 20px;
+      background-color: var(--header-bg);
+      backdrop-filter: blur(20px);
+      z-index: 1000;
+    }
+
+    .internal-links {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      img {
+        vertical-align: middle;
+        &:hover {
+          animation: pulse 1.5s ease-in-out alternate infinite;
+        }
+      }
+    }
+  }
+</style>

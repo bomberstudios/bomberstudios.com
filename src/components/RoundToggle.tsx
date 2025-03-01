@@ -12,7 +12,9 @@ export const RoundToggle = ({ enabled = true, size = 20 }: RoundToggleProps) => 
   const handleWidth = size;
   const togglePadding = size / 5;
   const onColor = '#feba09';
-  const offColor = '#ccc';
+  const offColor = '#cccccc';
+  // const onBackground = 'green';
+  // const offBackground = 'blue';
   const onBackground = 'oklch(58% 0.12 144.92)';
   const offBackground = 'oklch(75% 0 250)';
   const rotations = 4;
@@ -32,13 +34,15 @@ export const RoundToggle = ({ enabled = true, size = 20 }: RoundToggleProps) => 
         borderRadius: "9999px",
         width: toggleWidth,
         height: handleWidth + togglePadding * 2,
-        cursor: "pointer"
+        cursor: "pointer",
+        backgroundColor: offBackground
       }}
       animate={{
         backgroundColor: isOn ? onBackground : offBackground,
         boxShadow: isOn ? `inset 0 0 ${size / 6}px rgba(0, 0, 0, 0.4)` : `inset 0 0 ${size}px rgba(0, 0, 0, 0.4)`,
         transition
       }}
+      initial={false}
     >
       <motion.svg
         style={{

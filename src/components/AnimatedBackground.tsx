@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './AnimatedBackground.css'
 
 import { motion } from 'framer-motion'
@@ -12,11 +12,16 @@ function App() {
   const [rotate, setRotate] = useState(0);
   const canvasElement = useRef<HTMLCanvasElement>(null);
 
+  useEffect(() => {
+    const interval = setInterval(randomizePosition, 1000);
+    return () => clearInterval(interval);
+  }, [x, y]);
+
   const randomizePosition = () => {
     if (!canvasElement.current) {
       return;
     }
-    const ctx : CanvasRenderingContext2D = canvasElement.current.getContext("2d")!;
+    const ctx: CanvasRenderingContext2D = canvasElement.current.getContext("2d")!;
     ctx.strokeStyle = "rgba(255, 100, 0, 0.2)";
     ctx.lineWidth = 1;
     const screenScale = window.devicePixelRatio;
@@ -51,12 +56,11 @@ function App() {
   return (
     <>
       <canvas id="myCanvas"
-        width={maxScreenWidth}
-        height={maxScreenHeight}
-        ref={canvasElement}
-        style={{ width: window.innerWidth + "px", height: window.innerHeight + "px" }}></canvas>
+        // width={maxScreenWidth}
+        // height={maxScreenHeight}
+        ref={canvasElement}>
+      </canvas>
       <motion.div className='square' animate={{ x, y, rotate }} transition={{ type: "spring" }} />
-      <button className='position' onClick={randomizePosition}>Hit me</button>
     </>
   )
 }

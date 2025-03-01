@@ -1,0 +1,25 @@
+---
+title: Bomber Studios
+description: How I work
+layout: "@layouts/TextPage.astro"
+---
+
+# How I Work
+
+My approach to design has evolved over the years, and at the moment I’m practicing a very relaxed version of continuous discovery + continuous design.
+
+**Continuous discovery**, because I rely on internal and external feedback to think about new product features, and to validate my hypothesis.
+
+**Continuous design**, because I understand that a good product is the result of a never-ending refinement process, and a Figma document is usually the start of a journey, not the end.
+
+When solving problems with others, I have a strong bias towards action. I usually prefer showing a crude visual version of an idea to get a conversation started, rather than discuss abstract concepts, or show very polished visuals.
+
+Don’t get me wrong, I *really* enjoy juggling complex UX/UI problems in my head, and thinking about information architecture, product strategy, and how all pieces of design work fit into a larger narrative. But at the end of the day, **shipped is better than perfect**.
+
+I’m also a big fan of proper team work, and shared ownership: I absolutely do not care who gets the credit, as long as the journey is fun and the end result is good. I am used to working on mixed teams, where the barriers between business, design and development are blurry.
+
+As a generalist, I’m happy to help move the proverbial needle using any of my skills: sometimes the project needs big, shiny work, and sometimes it just needs monotonous, repetitive work.
+
+I have learned to have fun doing both.
+
+If you're still here, you can check [some of the projects I’ve worked on recently](/projects).

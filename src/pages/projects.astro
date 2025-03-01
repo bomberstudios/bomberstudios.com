@@ -1,0 +1,48 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { CaseSummary } from "@components/CaseSummary";
+---
+
+<BaseLayout
+  title="Ale Muñoz — Projects"
+  description="A small portfolio of recent projects."
+>
+  <section class="text">
+    <h1>Projects</h1>
+    <p>
+      As a designer with many years of experience, I use both my skills and my
+      <em>intuition</em> to create simple solutions to complex problems. I enjoy
+      my craft and <a href="https://ale.today/polish-polish-polish"
+        >love to work on the details</a
+      >, but I always try to reach the sweet spot between “this is perfect” and
+      “we need this yesterday”.
+    </p>
+    <p>
+      These are some recent projects that (I believe) illustrate these points.
+    </p>
+  </section>
+
+  <CaseSummary
+    title="Animated round toggle"
+    client="Personal project, 2025"
+    tools="Figma, React, CSS, Motion.dev"
+    tldr="I spent a Friday evening building a round toggle component in React, just to prove myself it could be done."
+    link="/projects/roundtoggle"
+  />
+
+  <CaseSummary
+    title="Energy Efficiency"
+    client="Qatium, 2025"
+    tools="Research, ideation, design and front end development."
+    tldr="I took a project from 0 to 1 in 4 days. I started with a vague definition of the problem and some raw materials and, collaborating with sales, clients and engineers, came up with a fully formed feature that our clients loved."
+    link="/projects/energy-efficiency"
+  />
+
+  <CaseSummary
+    title="Improvements to Search feature"
+    client="Qatium, 2025"
+    tools="Ideation, sketching, coding (TypeScript, CSS), testing (Jest)."
+    tldr="I improved the UX for a feature using as little time as possible, going straight to code once a design decision was made."
+    link="/projects/qatium-search-improvements"
+  />
+</BaseLayout>

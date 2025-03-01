@@ -1,0 +1,59 @@
+---
+import Case from "@layouts/Case.astro";
+import { CaseSummary } from "@components/CaseSummary";
+import { RoundToggle } from "@components/RoundToggle";
+---
+
+<Case title="Animated Round Toggle">
+  <CaseSummary
+    title="Animated round toggle"
+    client="Personal project"
+    tools="Figma, React, CSS, Motion.dev"
+    tldr="I spent a Friday evening building a round toggle component in React, just to prove myself it could be done."
+  />
+  <section class="text">
+    <h2>Background</h2>
+    <p>
+      As part of a random task on my daily job, I created an icon that I thought
+      would look cool as a toggle. I decided to build a round toggle component
+      in React to see if I could replicate the design in code and make it
+      interactive.
+    </p>
+    <p>
+      While I was there, I thought I'd make it infinitely scalable so I could
+      display it on my portfolio without having to worry about the size.
+    </p>
+  </section>
+  <section class="image">
+    <p>Click the little buddies!</p>
+    <RoundToggle client:only="react" size={100} />
+    <RoundToggle client:only="react" size={50} />
+    <RoundToggle client:only="react" />
+  </section>
+  <section class="text">
+    <h2>Development</h2>
+    <p>
+      I used React to build the component and CSS for the styling. I used
+      `useState` to keep track of the toggle state and added a transition to the
+      icon to make it move and rotate when toggled.
+    </p>
+    <p>
+      I struggled a bit with the animation parameters, because it's hard to make
+      it look like a real rotation when the animation is too fast, but also it's
+      easy to get bored when it is too slow. I think I found a good balance in
+      the end.
+    </p>
+    <p>
+      You can check the code for this component in <a
+        href="https://github.com/bomberstudios/bomberstudios.com/tree/main/src/components"
+        >my GitHub repository</a
+      >.
+    </p>
+  </section>
+</Case>
+
+<style>
+  .image {
+    gap: 2rem;
+  }
+</style>
