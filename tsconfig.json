@@ -1,5 +1,6 @@
 {
   "extends": "astro/tsconfigs/strict",
+  "exclude": ["archive"],
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "react",
@@ -9,6 +10,6 @@
       "@layouts/*": ["src/layouts/*"],
       "@images/*": ["src/images/*"],
       "@styles/*": ["src/styles/*"],
-    }
+    },
   }
 }
