@@ -7,18 +7,37 @@ interface EnergyScoreProps {
 }
 
 export const EnergyScore = ({ initialScore }: EnergyScoreProps) => {
-
   const [score, setScore] = useState(initialScore);
+
+  const formatScore = (score: number) => {
+    score = clamp(score, 0, 100);
+    const integerPart = Math.floor(score);
+    const decimalPart = Math.round((score - integerPart) * 10);
+    return (
+      <>
+        <span>{integerPart}</span>
+        {decimalPart > 0 ? (
+          <span className={style.decimal}>.{decimalPart}</span>
+        ) : null}
+      </>
+    );
+  };
+  const clamp = (num: number, min: number, max: number) => {
+    return Math.min(Math.max(num, min), max);
+  };
   const scoreToDegrees = (score: number) => {
-    return (score / 100) * 180;
-  }
+    return (clamp(score, 0, 100) / 100) * 180;
+  };
+
   const randomValue = () => {
-    setScore(Math.floor(Math.random() * 100));
+    // setScore(Math.floor(Math.random() * 100));
+    const randomValue = Math.random() * 100;
+    setScore(randomValue);
   }
 
   return (
     <div className={style.dial} onClick={randomValue}>
-      <div className={style.score}>{score}</div>
+      <div className={style.score}>{formatScore(score)}</div>
       <div className={style.dialBackground}>
         <svg width="228" height="114" viewBox="0 0 228 114">
           <path d="M222.3 114C225.448 114 228.015 111.446 227.858 108.302C226.45 80.1421 214.642 53.4221 194.61 33.3898C173.231 12.0107 144.235 2.28266e-06 114 0C83.7653 -2.28265e-06 54.769 12.0107 33.3898 33.3898C13.3575 53.4221 1.55048 80.1421 0.142342 108.302C-0.0148782 111.446 2.55198 114 5.7 114V114C8.84802 114 11.3835 111.445 11.5582 108.302C12.9551 83.1678 23.5569 59.3448 41.4509 41.4508C60.6921 22.2096 86.7888 11.4 114 11.4C141.211 11.4 167.308 22.2096 186.549 41.4508C204.443 59.3448 215.045 83.1678 216.442 108.302C216.617 111.445 219.152 114 222.3 114V114Z" fill="url(#dial_gradient)" />
