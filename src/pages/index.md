@@ -4,7 +4,7 @@ description: Ale Muñoz's personal website
 layout: "@layouts/TextPage.astro"
 ---
 
-# Hi, I’m Ale Muñoz!
+# Hi, I’m Ale Muñoz, a product designer who codes
 
 I **love** design. I **love** code.
 
