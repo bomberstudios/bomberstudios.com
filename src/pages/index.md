@@ -16,4 +16,4 @@ I've worked at the intersection of design and technology for as long as I can re
 
 You can read more about [how I work](/how-i-work) or [check some of my recent projects](/projects).
 
-If you want to get in touch, you can find me on [Bluesky](https://bsky.app/profile/bomberstudios.com) or [LinkedIn](https://www.linkedin.com/in/bomberstudios/).
+If you want to get in touch, you can [email me](mailto:bomberstudios@gmail.com), or find me on [Bluesky](https://bsky.app/profile/bomberstudios.com) or [LinkedIn](https://www.linkedin.com/in/bomberstudios/).
