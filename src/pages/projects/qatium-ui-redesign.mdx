@@ -1,0 +1,102 @@
+import "@styles/portfolio.css";
+import Case from "@layouts/Case.astro";
+import Image from "astro/components/Image.astro";
+import ImageZoom from "@components/ImageZoom.astro";
+
+import { CaseSummary } from "@components/CaseSummary";
+
+<Case title="Qatium.app UI Redesign">
+
+    <CaseSummary
+      title="Qatium.app UI Redesign"
+      client="Qatium, 2025"
+      tools="Research, Visual & UX Design (Figma)"
+      tldr="Qatium.app has evolved organically over the years. Small, focused teams have made improvements in multiple parts of the app, resulting in a design that lacks coherence and polish. Here is a quick attempt at addressing some of the more urgent issues." />
+
+    <section class="text">
+      ## Problem
+
+      Qatium's organization practices a very lean, very agile approach to product development. This means that small teams are constantly working on different parts of the app, and the design evolves organically over time.
+
+      While this is great for getting things done quickly, it also means that the design lacks coherence and polish. This is especially true for the Qatium.app web app, which is the main product of the company.
+
+      Over the years, little things have crept in. Little customer pains we've identified that, while not critical, make the app feel less polished than it could be:
+
+      - Alignment: the app lacks a clear grid system, and elements don't seem to follow any particular order.
+      - Screen real state is not used efficiently.
+      - Random empty spaces make the app feel unfinished.
+      - The bottom timeline is too big and takes too much space.
+      - The right sidebar has grown to become a monster, and usability is suffering. Icons are too small, they have no labels, and it's hard to tell which features are currently active.
+    </section>
+
+    <section class="image">
+      <figcaption>
+        The current state of the app.
+      </figcaption>
+      <ImageZoom src="qatium-ui-redesign/old-ui.png" alt="Qatium UI - Current State" />
+    </section>
+
+    <section class="text">
+      ## Solution
+
+      I took a couple of afternoons to go through the more urgent issues in the app UI, focusing on high level changes that our agile process usually overlooks.
+
+      I did **not** focus on things like colors, iconography, or specific app features, since those can be addressed by the teams working on them.
+    </section>
+
+    <section class="image">
+      <figcaption>
+        The new design of the app.
+      </figcaption>
+      <ImageZoom src="qatium-ui-redesign/new-ui.png" alt="Qatium UI - Proposed Design" />
+    </section>
+
+    <section class="text">
+      ### Screen Real State and Alignment
+
+      I tightened the spacing between elements, added a grid system to the app, and made sure that all elements are aligned to the grid.
+
+      Common elements like the Search bar, the notification bell, and the user menu now reside on a header area that is always visible.
+
+      ### Map Controls
+
+      The map controls are now in a familiar place, and the map is now a lot more usable. Extra features are now hidden behind a '…' button.
+      
+      Users can enter a focus mode that hides all the app chrome and shows only the map. This is especially useful for users on the field who are using the app on a small screen.
+
+      <ImageZoom src="qatium-ui-redesign/new-ui-focus-mode.png" alt="Qatium UI - Map Controls" />
+
+      ### Timeline
+
+      I removed all the unnecessary elements from the bottom timeline, to make it smaller. Users can hover over it to see the full timeline, leaving the default state in a much cleaner state.
+
+      <ImageZoom src="qatium-ui-redesign/new-ui-timeline-hover.png" alt="Qatium UI - Timeline Hover" />
+
+      ### Right Sidebar
+
+      The right sidebar has been redesigned to be more usable. Icons now have labels. Sidebar elements are collapsible, so you can hide the ones you don't use often while still being able to tell which ones are active.
+
+      The sidebar also has a glass effect to make it feel more modern, and let some of the map content through.
+
+      <ImageZoom src="qatium-ui-redesign/new-ui-zoom-in.png" alt="Qatium UI - Zoom In" />
+
+      ## Figma file
+
+      I created a Figma file with the new design, which you can find here:
+      </section>
+    <section class="image">
+      <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/design/hgLWj8JJKbZO3lLCLcrt5Y/Qatium-Playground?node-id=7-30&embed-host=share" allowfullscreen></iframe>
+    </section>
+    <section class="text">
+
+      ## Thank you for your time!
+
+      I hope you enjoyed this little experiment. Qatium is a very
+      fast-paced company, and this design will probably be outdated by the
+      time you read this. But I hope it helps you understand the kind of work I
+      do, and the kind of problems I like to solve.
+    </section>
+
+
+
+</Case>

@@ -36,7 +36,9 @@ main {
 
   h2 {
     margin-inline-start: -3px;
-    font-size: calc(var(--base-size) * var(--scale) * var(--scale) * var(--scale));
+    font-size: calc(
+      var(--base-size) * var(--scale) * var(--scale) * var(--scale)
+    );
   }
 
   h3 {
@@ -84,10 +86,26 @@ main {
       &.case-summary {
         margin-bottom: 4rem;
 
+        small {
+          color: var(--subtle-text);
+          border-bottom: 1px solid var(--subtle);
+          display: block;
+          margin: 0 -1rem 1rem -1rem;
+          padding-bottom: 0.5rem;
+          padding-left: 1rem;
+          text-transform: uppercase;
+          font-size: 0.8rem;
+        }
+
         h1 {
           letter-spacing: -0.05rem;
-          margin-bottom: 0;
+          margin-bottom: 1.5rem;
           text-wrap: balance;
+        }
+
+        h2 {
+          margin: 0;
+          margin-bottom: 1.2rem;
         }
 
         ul {
@@ -116,14 +134,14 @@ main {
         }
 
         .lead {
-          border-left: 0.5rem solid var(--brand);
+          border-left: 0.25rem solid var(--brand);
           background-color: var(--subtle);
-          padding: 1em;
-          margin: 1.5em -1em;
+          padding: 1rem;
+          margin: 1rem -1rem;
           text-wrap: pretty;
 
           &::before {
-            content: 'TLDR';
+            content: "TLDR";
             display: block;
             margin: 0;
             margin-top: -0.5em;
@@ -133,7 +151,6 @@ main {
             color: var(--brand);
           }
         }
-
       }
 
       h2 {
@@ -208,7 +225,7 @@ main {
 
       img {
         height: auto;
-        max-inline-size: 50%;
+        max-inline-size: 80%;
         display: block;
         margin: 0 auto;
       }
@@ -242,7 +259,6 @@ main {
         }
       }
     }
-
   }
 
   a {
@@ -252,7 +268,8 @@ main {
 
     &:hover {
       --gap: 1rem;
-      padding: calc(var(--gap) * 0.25) var(--gap) calc(var(--gap) * 0.5) var(--gap);
+      padding: calc(var(--gap) * 0.25) var(--gap) calc(var(--gap) * 0.5)
+        var(--gap);
       margin: 0 calc(var(--gap) * -1);
       background-color: var(--brand);
       color: var(--brand-reverse);
