@@ -49,8 +49,6 @@ main {
   p,
   li {
     line-height: 150%;
-    /* hyphens: auto; */
-    /* word-wrap: pretty; */
     text-wrap: pretty;
   }
 

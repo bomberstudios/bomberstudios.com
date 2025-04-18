@@ -1,18 +1,21 @@
 import "@styles/portfolio.css";
+import "@styles/bankinter.css";
+
 import Case from "@layouts/Case.astro";
 import CaseSummary from "@components/CaseSummary.astro";
 import Img from "@components/Img.astro";
 import ImageZoom from "@components/ImageZoom.astro";
 
 <Case title="Bankinter, Remastered (WIP)">
-  <CaseSummary
-    title="Bankinter, Remastered (WIP)"
-    client="Personal, 2025. Based on a project for Bankinter, 2013."
-    tools="Visual Design (Fireworks, Sketch, Figma), Design Ops"
-    tldr="A revision of a project I did for Bankinter in 2013. I took the original design and updated it to 2025 standards, using modern tools and techniques."
-    image="bankinter-remastered.png" />
 
-    <section class="text">
+<CaseSummary
+  title="Bankinter, Remastered (WIP)"
+  client="Personal, 2025. Based on a project for Bankinter, 2013."
+  tools="Visual Design (Fireworks, Sketch, Figma), Design Ops"
+  tldr="A revision of a project I did for Bankinter in 2013. I took the original design and updated it to 2025 standards, using modern tools and techniques."
+  />
+
+<section class="text">
 
 ## What is this?
 
@@ -20,6 +23,14 @@ Every now and then, the music industry decides to revisit some of its more iconi
 
 In a similar spirit, I decided to revisit one of my old projects, and see how it would “sound” a few years later: revisit decisions made and solutions applied (if needed), and rebuild parts of it with new tooling and workflows.
 
+</section>
+
+<section class="image scrollable">
+  ### Home page, 2013
+  <Img src="projects/bankinter/01_home.png" alt="Original Home Page" />
+</section>
+
+<section class="text">
 I thought it would be an interesting experiment, to evaluate how far we’ve come as a profession (and what, if anything, we’ve missed in the way here).
 
 I was not disappointed.
@@ -27,10 +38,16 @@ I was not disappointed.
 ## The original project
 
 My chosen project is one I’m particularly fond of: the complete redesign of [Bankinter](https://bankinter.com), one of the largest banks in Spain (back in the day, at least).
-
-<ImageZoom src="projects/bankinter/screens.png" alt="Original Bankinter project" />
-
 It was the last big design project I worked on before joining Sketch, and the things I learnt about systemic design in complex scenarios helped shape the Symbols system in Sketch 3.0.
+
+</section>
+
+<section class="image scrollable">
+  ### Broker, stock purchase page, 2013
+  <Img src="projects/bankinter/33_broker-comprar_valor.png" alt="Original Home Page" />
+</section>
+
+<section class="text">
 
 On the soft-skills side, it required a great deal of communication with multiple stakeholders, with multiple workshops and presentations to get everyone on board with the new strategy and design.
 
@@ -38,9 +55,16 @@ On the soft-skills side, it required a great deal of communication with multiple
 
 Also, their branding is **orange**. That’s *always* a plus.
 
-> Fun fact: believe it or not, bankers will check the numbers in your mockups and complain when they don’t add up. In this project, I learnt to design with a calculator by my side 😅
+> Fun fact: believe it or not, **bankers will check the numbers in your mockups** and complain when they don’t add up. In this project, I learnt to design with a calculator by my side 😅
+</section>
 
-### Tooling
+<section class="image scrollable">
+  ### Deposits, details page, 2013
+  <Img src="projects/bankinter/07_depositos-detalle.png" alt="Original Design" />
+</section>
+
+<section class="text">
+## Tooling
 
 Bankinter was the first enterprise project where I started using Sketch alongside our official design tool, Adobe Fireworks. We also added a bit of Adobe Illustrator and Microsoft PowerPoint, and even some HTML for clickable prototypes.
 
@@ -74,10 +98,24 @@ I'm glad to confirm that **the basics are the basics for a good reason**, and mo
 
 <Img src="projects/bankinter/grid.png" alt="Bankinter Grid" />
 
-
-
 Something we're missing in 2025 is how easy it was to work with **noise textures** in fills. Figma has *nothing* like that (at least natively), and Sketch's implementation is (still) a bit of a hack. Fireworks' noise feature was excellent (it was truly random), and I miss it dearly. I removed the noise in most fills, and while it's not a huge change, it takes away some of the character of the design.
 
+## The new project
+
+The new project is still a work in progress. The plan is to transition all the original screens to Figma, including the clickable prototypes that we originally created using HTML and CSS.
+
+While I've tried to keep the design as close to the original as possible, I am definitely taking advantage of the new tools and techniques available. Symbols in Fireworks were a bit of a hassle to work with, and modern tools make it a lot easier to create _and maintain_ reusable components.
+
+I'm also using Figma's **Autolayout** feature to create a more flexible design system, keeping the design as modular as possible. I'm not a huge fan of the feature, but I have to admit it makes some things easier. I still prefer to use it as a last resort, and only when I really need it.
+
+> For a quite critical take on Autolayout and other Figma features, check out [this article](https://uxdesign.cc/figmas-not-a-design-tool-it-s-a-rube-goldberg-machine-for-avoiding-code-2a24f11add5d). While I don't necessarily agree with all the points made, as a designer who codes I definitely sympathize with the general idea that sometimes we forget that Figma is a means to an end, not the end itself. I riff a bit about that in my [How I Work](/how-i-work/) page.
+</section>
+
+<section class="image">
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/design/HNbeVWBfrnZA4V9X7b5xl3/Bankinter?node-id=1-46&embed-host=share" allowfullscreen></iframe>
+</section>
+
+<section class="text">
 ## Conclusions
 
 - **Design systems** are a thing now. We struggled with this back in the day, and I’m glad to see that the industry is finally catching up with the idea of creating reusable components and styles.
