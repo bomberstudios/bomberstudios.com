@@ -1,5 +1,4 @@
 ---
-import ImageZoom from '@components/ImageZoom.astro'
 import Img from '@components/Img.astro'
 
 interface Props {
@@ -15,7 +14,6 @@ const { title, link = '', client, tools, tldr, image } = Astro.props as Props
 ---
 
 <section class='text case-summary'>
-  <!-- <small>Project</small> -->
   {
     link ? (
       <h2>
