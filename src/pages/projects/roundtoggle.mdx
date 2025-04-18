@@ -1,0 +1,74 @@
+import Case from '@layouts/Case.astro'
+import CaseSummary from '@components/CaseSummary.astro'
+import Img from '@components/Img.astro'
+import { RoundToggle } from '@components/RoundToggle'
+import '@styles/roundtoggle.css'
+
+<Case title='Animated Round Toggle'>
+  <CaseSummary
+    title='Animated round toggle'
+    client='Personal project'
+    tools='Figma, React, CSS, Motion.dev'
+    tldr='I spent a Friday evening building a round toggle component in React, just to prove myself it could be done.'
+  />
+  <section class='text'>
+    ## Background
+
+    <Img 
+      src='projects/animated-round-toggle.png'
+      alt='Animated round toggle'
+     />
+
+    As part of a random task on my daily job, I created an icon that I thought
+    would look cool as a toggle. I decided to build a round toggle component
+    in React to see if I could replicate the design in code and make it
+    interactive.
+
+    While I was there, I thought I'd make it infinitely scalable so I could
+    display it on my portfolio without having to worry about the size.
+  </section>
+
+  <section class='image'>
+    <p>Click the little buddies!</p>
+    <RoundToggle client:only='react' size={100} />
+    <RoundToggle client:only='react' size={50} />
+    <RoundToggle client:only='react' />
+  </section>
+
+  <section class='text'>
+    If you feel like reading a long post about the process, along with some reflections about life, the universe, and design engineering, today is your lucky day because [that's exactly what I wrote about in my blog](https://ale.today/drawing-with-words).
+
+    However, I understand you're busy, so here's a quick summary:
+
+    ## Development
+
+    I used [React](https://react.dev) to build the component, pure CSS for the styling, `useState` to keep track of the toggle state and [motion.dev](https://motion.dev) for the animations.
+
+    ## Animation
+
+    Turns out it's not easy to make a handle roll convincingly. I tried a few different approaches, mostly involving the number of rotations and the speed of the animation. Make the animation too fast and you can't really perceive the rotation. Make it too slow, and you'll get bored. Eventually, I settled on a 240° rotation and a simple tween animation (with an extra touch of anticipation).
+
+    ## Documentation
+
+    I'm going to skip the "picture of the thing vs the thing" debate here, and just mention that this is the kind of thing that's hard to document in a way that doesn't get stale.
+
+    Luckily I can code, because there's nothing like actual code to explain how the animation works:
+
+    ```jsx
+    const rotations = 4;
+    const speed = 0.6;
+    const handleRotation = isOn ? 60 * rotations : 0;
+    const transition = {
+      duration: speed,
+      type: "tween",
+      ease: "anticipate"
+    };
+    ```
+
+    ## Further reading
+
+    - You can check the code for this component in <a href='https://github.com/bomberstudios/bomberstudios.com/blob/main/src/components/RoundToggle.tsx'>my GitHub repository</a>.
+    - A more detailed post about the process is available in my blog: [Drawing with words](https://ale.today/drawing-with-words).
+
+  </section>
+</Case>

@@ -1,0 +1,22 @@
+---
+import type { ImageMetadata } from 'astro'
+import { Image } from 'astro:assets'
+
+interface Props {
+  src: string
+  alt: string
+  loading?: 'lazy' | 'eager'
+}
+
+const { src, alt = 'Image', loading } = Astro.props
+const images = import.meta.glob<{ default: ImageMetadata }>([
+  // Find any image in the project, because we want to support any path for storage
+  '../**/**/*.{jpg,jpeg,png,gif,webp,svg}'
+])
+const realSrc = `../images/${src}`
+if (!images[realSrc]) {
+  throw new Error(`Image not found: ${src}`)
+}
+---
+
+<Image src={images[realSrc]()} alt={alt} loading={loading} />

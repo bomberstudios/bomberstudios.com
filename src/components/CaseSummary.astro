@@ -1,0 +1,122 @@
+---
+import ImageZoom from '@components/ImageZoom.astro'
+import Img from '@components/Img.astro'
+
+interface Props {
+  title: string
+  link?: string
+  client: string
+  tools: string
+  tldr: string
+  image?: string
+}
+
+const { title, link = '', client, tools, tldr, image } = Astro.props as Props
+---
+
+<section class='text case-summary'>
+  <!-- <small>Project</small> -->
+  {
+    link ? (
+      <h2>
+        <a href={link}>{title}</a>
+      </h2>
+    ) : (
+      <h2>{title}</h2>
+    )
+  }
+  {image && <Img src={'projects/' + image} alt={title} loading='lazy' />}
+  <p class='lead'>{tldr}</p>
+  <ul>
+    <li>
+      <strong>Client</strong>
+      <span>{client}</span>
+    </li>
+    <li>
+      <strong>Tools</strong>
+      <span>{tools}</span>
+    </li>
+  </ul>
+</section>
+
+<style>
+  .case-summary {
+    margin: 5rem auto;
+
+    small {
+      color: var(--subtle-text);
+      border-bottom: 1px solid var(--subtle);
+      display: block;
+      /* margin: 0 -1rem 1rem -1rem; */
+      padding-bottom: 0.5rem;
+      padding-left: 1rem;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    img {
+      /* margin: -1rem; */
+      border-radius: 0;
+      /* width: 100%; */
+      /* padding: 1rem; */
+      /* box-sizing: content-box; */
+      box-shadow: 0 0 1rem var(--subtle);
+    }
+
+    h1 {
+      letter-spacing: -0.05rem;
+      margin-bottom: 1.5rem;
+      text-wrap: balance;
+    }
+
+    h2 {
+      padding: 0 1rem;
+      margin: 0;
+      margin-bottom: 1.2rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      color: var(--subtle);
+      font-size: 1rem;
+      font-weight: 500;
+
+      li {
+        display: flex;
+        flex-direction: row;
+        text-transform: uppercase;
+        color: var(--subtle-text);
+
+        strong {
+          width: 8ch;
+          text-align: right;
+          padding-right: 0.5rem;
+          font-weight: 700;
+        }
+        span {
+          flex: 1;
+        }
+      }
+    }
+
+    .lead {
+      border-left: 2px solid var(--brand);
+      background-color: var(--subtler);
+      padding: 1rem;
+      /* margin: 1rem -1rem; */
+      text-wrap: pretty;
+
+      &::before {
+        content: 'TLDR';
+        display: block;
+        margin: 0;
+        margin-top: -0.5em;
+        padding: 0;
+        font-size: 0.7em;
+        font-weight: 700;
+        color: var(--brand);
+      }
+    }
+  }
+</style>

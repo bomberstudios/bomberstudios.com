@@ -4,13 +4,13 @@ html {
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
-    "Segoe UI",
+    'Segoe UI',
     Roboto,
     Oxygen,
     Ubuntu,
     Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
+    'Open Sans',
+    'Helvetica Neue',
     sans-serif;
   line-height: 1.5;
   color: var(--text-color);
@@ -35,6 +35,7 @@ html {
   --subtler: light-dark(#f0f0f0, #555);
   --subtle-text: light-dark(#737373, #888);
   --radius: 0.5rem;
+  --radius-small: 0.25rem;
   --header-text: light-dark(#333, #ddd);
   --header-bg: light-dark(#ffffff55, #22222288);
   --link-dark: light-dark(#c05000, var(--orange));
@@ -98,6 +99,13 @@ h6 {
 hr {
   border: 0;
   border-top: 1px solid var(--subtle);
+}
+
+p code {
+  font-size: 1rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--radius-small);
+  background-color: var(--subtle);
 }
 
 /* Layout */
@@ -196,6 +204,7 @@ main {
 
 /* Components */
 .astro-code {
+  font-size: 1rem;
   padding: 1rem;
   border-radius: var(--radius);
   margin: 1rem 0;
