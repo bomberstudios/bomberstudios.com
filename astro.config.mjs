@@ -8,8 +8,5 @@ import mdx from '@astrojs/mdx';
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), mdx()],
-  site: 'https://bomberstudios.com',
-  experimental: {
-    svg: true,
-  }
+  site: 'https://bomberstudios.com'
 });
