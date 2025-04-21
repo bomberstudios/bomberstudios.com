@@ -153,7 +153,7 @@ main {
 
       img {
         height: auto;
-        max-inline-size: 80%;
+        /* max-inline-size: 80%; */
         display: block;
         margin: 0 auto;
       }
@@ -183,7 +183,7 @@ main {
 
         img {
           width: 100%;
-          max-width: 2000px;
+          max-width: 1100px;
         }
       }
     }
