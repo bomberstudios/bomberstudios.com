@@ -13,11 +13,10 @@ main section.image.scrollable img {
 img-comparison-slider {
   --divider-width: 5px;
   --divider-color: white;
-  --divider-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  --divider-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   --default-handle-color: var(--brand);
-  --default-handle-width: 100px;
+  --default-handle-opacity: 0;
   outline: none;
-
   max-width: 1800px;
   height: auto;
 }
