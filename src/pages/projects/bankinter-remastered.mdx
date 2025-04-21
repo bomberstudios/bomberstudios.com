@@ -22,15 +22,18 @@ import ImageZoom from "@components/ImageZoom.astro";
 Every now and then, the music industry decides to revisit some of its more iconic records, and breathe new life into them.
 
 In a similar spirit, I decided to revisit one of my old projects, and see how it would “sound” a few years later: revisit decisions made and solutions applied (if needed), and rebuild parts of it with new tooling and workflows.
-
 </section>
 
-<section class="image scrollable">
-  ### Home page, 2013
-  <Img src="projects/bankinter/01_home.png" alt="Original Home Page" />
+<section class="image">
+### Home page, 2013 vs 2025
+<img-comparison-slider>
+  <img slot="first" src="/images/projects/bankinter/home_page_original.png" alt="Original Home Page" />
+  <img slot="second" src="/images/projects/bankinter/home_page_new.png" alt="Updated Home Page" />
+</img-comparison-slider>
 </section>
 
 <section class="text">
+
 I thought it would be an interesting experiment, to evaluate how far we've come as a profession (and what, if anything, we've missed in the way here).
 
 I was not disappointed.
@@ -83,21 +86,21 @@ A nasty side effect of using Fireworks (and the main motivation behind this rema
 
 I'm old school, and love the texture of fist-sized pixels and the sharpness of a good pixel-perfect line. But I have to admit these don't live up to modern standards.
 
-So I spent some time redrawing some of those screens, so I could get from this:
+So I spent some time redrawing some of those screens, translating the text, and polishing the layout and spacing. I even updated the dates on the screens to 2025!
+</section>
 
-<ImageZoom src="projects/bankinter/original-screen.png" alt="Original Bankinter Screen" />
+<section class="image">
+<img-comparison-slider>
+  <img slot="first" src="/images/projects/bankinter/old_dates.png" />
+  <img slot="second" src="/images/projects/bankinter/new_dates.png" />
+</img-comparison-slider>
+</section>
 
-to this:
-
-<ImageZoom src="projects/bankinter/redrawn-screen.png" alt="Redrawn Bankinter Screen" />
-
-While I was at it, I also took the opportunity to translate the text, polish the layout and spacing, and create styles and components in Figma.
+<section class="text">
+While I was at it, I created styles and components in Figma.
 
 <ImageZoom src="projects/bankinter/bankinter-figma.png" alt="Figma Project" />
 
-I even updated the dates on the screens to 2025 😎
-
-<ImageZoom src="projects/bankinter/new_dates.png" alt="Refresh all the things!" />
 
 ## Design foundations
 
@@ -146,3 +149,12 @@ I'm also using Figma's **Autolayout** feature to create a more flexible design s
 
 </section>
 </Case>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
+></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"
+/>
