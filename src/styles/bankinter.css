@@ -1,21 +1,12 @@
 :root {
-  --image-width: min(80vw, 1600px);
+  /* --image-width: min(80vw, 1600px); */
 }
 main section img {
   border-radius: 0;
 }
-main section.image.scrollable {
-  height: 1000px;
-}
-main section.image img,
-main section.image.scrollable img {
-  max-width: var(--image-width);
-  height: auto;
-}
 main section.image.scrollable img {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
 }
-
 img-comparison-slider {
   --divider-width: 5px;
   --divider-color: white;
@@ -23,6 +14,6 @@ img-comparison-slider {
   --default-handle-color: var(--brand);
   --default-handle-opacity: 0;
   outline: none;
-  max-width: var(--image-width);
+  /* max-width: var(--image-width); */
   height: auto;
 }

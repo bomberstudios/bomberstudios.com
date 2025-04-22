@@ -153,7 +153,7 @@ main {
 
       img {
         height: auto;
-        max-inline-size: 80vw;
+        max-inline-size: 60vw;
         display: block;
         margin: 0 auto;
       }
