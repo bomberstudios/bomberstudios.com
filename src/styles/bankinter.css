@@ -1,5 +1,5 @@
 :root {
-  --image-width: 60vw;
+  --image-width: min(80vw, 1600px);
 }
 main section img {
   border-radius: 0;

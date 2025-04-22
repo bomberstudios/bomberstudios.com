@@ -121,7 +121,7 @@ main {
       }
 
       img {
-        /* max-inline-size: 100%; */
+        max-inline-size: 100%;
         height: auto;
 
         &.border {
