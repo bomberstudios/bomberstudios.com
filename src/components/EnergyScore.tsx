@@ -11,12 +11,13 @@ export const EnergyScore = ({ initialScore }: EnergyScoreProps) => {
 
   const formatScore = (score: number) => {
     score = clamp(score, 0, 100);
-    const integerPart = Math.floor(score);
-    const decimalPart = Math.round((score - integerPart) * 10);
+    const stringScore = score.toFixed(1);
+    const integerPart = stringScore.split(".")[0];
+    const decimalPart = stringScore.split(".")[1];
     return (
       <>
         <span>{integerPart}</span>
-        {decimalPart > 0 ? (
+        {decimalPart !== "0" ? (
           <span className={style.decimal}>.{decimalPart}</span>
         ) : null}
       </>
