@@ -102,6 +102,11 @@ hr {
   border-top: 1px solid var(--subtle);
 }
 
+p {
+  margin-block: 1lh;
+  margin-trim: both;
+}
+
 p code {
   font-size: 1rem;
   padding: 0.2rem 0.4rem;
