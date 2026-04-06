@@ -6,7 +6,7 @@ dist/
 
 # dependencies
 node_modules/
-package-lock.json
+# package-lock.json # This is required by the GitHub workflow, specifically by withastro/action@v3
 bun.lock
 
 # logs
