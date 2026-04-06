@@ -54,6 +54,31 @@ html {
   background: var(--brand);
 }
 
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--brand);
+  color: var(--bg-color);
+  font-weight: 600;
+  border-radius: var(--radius);
+  z-index: 9999;
+  text-decoration: none;
+
+  &:focus {
+    top: 1rem;
+  }
+}
+
+/* Focus */
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 /* HTML Elements */
 a {
   color: var(--brand);
@@ -124,14 +149,16 @@ body {
   overflow: auto;
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
 
-  100% {
-    opacity: 0.85;
-    transform: scale(1.2);
+    100% {
+      opacity: 0.85;
+      transform: scale(1.2);
+    }
   }
 }
 
@@ -218,38 +245,40 @@ main {
 }
 
 /* animation */
-@keyframes slidein {
-  from {
-    transform: translateX(200%);
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes slidein {
+    from {
+      transform: translateX(200%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
   }
 
-  to {
-    transform: translateX(0);
+  @keyframes slideout {
+    from {
+      transform: translateX(0%);
+    }
+
+    to {
+      transform: translateX(-400%);
+    }
   }
-}
 
-@keyframes slideout {
-  from {
-    transform: translateX(0%);
+  @view-transition {
+    navigation: auto;
   }
 
-  to {
-    transform: translateX(-400%);
+  main {
+    view-transition-name: main;
   }
-}
 
-@view-transition {
-  navigation: auto;
-}
+  ::view-transition-old(main) {
+    animation: slideout 0.5s ease-in-out;
+  }
 
-main {
-  view-transition-name: main;
-}
-
-::view-transition-old(main) {
-  animation: slideout 0.5s ease-in-out;
-}
-
-::view-transition-new(main) {
-  animation: slidein 0.5s ease-in-out;
+  ::view-transition-new(main) {
+    animation: slidein 0.5s ease-in-out;
+  }
 }
