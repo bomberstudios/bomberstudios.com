@@ -9,7 +9,7 @@ const { sticky } = Astro.props;
 <header class={sticky ? "sticky" : ""}>
   <div class="internal-links">
     <HeaderLink href="/">
-      <Image src={logo} alt="Logo" width={40} height={40} loading="eager" />
+      <Image src={logo} alt="Ale Muñoz" width={40} height={40} loading="eager" />
     </HeaderLink>
     <HeaderLink href="/projects">Projects</HeaderLink>
     <HeaderLink href="https://ale.today?utm_source=bs">Blog ›</HeaderLink>
@@ -20,19 +20,17 @@ const { sticky } = Astro.props;
   header {
     width: fit-content;
     margin: 0 auto;
-    border: 1px solid #ff660011;
+    border: 1px solid color-mix(in oklch, var(--brand) 8%, transparent);
     background-color: var(--header-bg);
     border-radius: 999px;
     padding: 0.5rem 1.5rem 0.5rem 0.55rem;
     text-align: center;
+    backdrop-filter: blur(20px);
+    z-index: 1000;
 
     a {
       color: var(--header-text);
     }
-
-    background-color: #fff9;
-    backdrop-filter: blur(20px);
-    z-index: 1000;
 
     &.sticky {
       position: sticky;

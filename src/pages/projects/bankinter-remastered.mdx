@@ -121,8 +121,8 @@ I spent some time redrawing a few screens from scratch, translating the text, an
 
 <section class="image">
 <img-comparison-slider value="45">
-  <img slot="first" src="/images/projects/bankinter/old_dates.webp" />
-  <img slot="second" src="/images/projects/bankinter/new_dates.webp" />
+  <img slot="first" src="/images/projects/bankinter/old_dates.webp" alt="Date display, original 2013 design" />
+  <img slot="second" src="/images/projects/bankinter/new_dates.webp" alt="Date display, remastered 2025 design" />
   <svg slot="handle" width="50" height="20" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M80 40L100 20L80 0L74 6L88 20L74 34L80 40Z" fill="#f60"/>
     <path d="M20 40L0 20L20 0L26 6L12 20L26 34L20 40Z" fill="#f60"/>
@@ -148,7 +148,7 @@ I'm also using Figma's **Autolayout** feature to create a more flexible design s
 
 <section class="image">
   ### Figma file, still a work in progress, 2025
-  <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="800" src="https://embed.figma.com/design/HNbeVWBfrnZA4V9X7b5xl3/Bankinter?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+  <iframe loading="lazy" width="800" height="800" src="https://embed.figma.com/design/HNbeVWBfrnZA4V9X7b5xl3/Bankinter?node-id=0-1&embed-host=share" allowfullscreen></iframe>
 </section>
 
 <section class="text">
@@ -177,6 +177,11 @@ I'm also using Figma's **Autolayout** feature to create a more flexible design s
   src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
 ></script>
 <link
-  rel="stylesheet"
+  rel="preload"
+  as="style"
   href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"
+  onload="this.rel='stylesheet'"
 />
+<noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css" />
+</noscript>

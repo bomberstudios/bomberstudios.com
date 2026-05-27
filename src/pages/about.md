@@ -1,5 +1,5 @@
 ---
-title: About Me
+title: Ale Muñoz - About Me
 description: A brief introduction to who I am and what I do.
 layout: "@layouts/BaseLayout.astro"
 ---

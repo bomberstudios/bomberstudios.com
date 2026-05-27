@@ -175,7 +175,7 @@ main {
         max-width: 2000px;
         height: auto;
         border-radius: 0.5rem;
-        outline: 2px solid black;
+        outline: 2px solid var(--subtle-text);
         outline-offset: -2px;
       }
 
