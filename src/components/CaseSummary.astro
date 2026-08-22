@@ -17,7 +17,7 @@ const { title, link = "", client, tools, tldr, image } = Astro.props as Props;
   {
     link ? (
       <h3>
-        <a href={link}>{title}</a>
+        <a href={link}>{title} ›</a>
       </h3>
     ) : (
       <h3>{title}</h3>
@@ -70,7 +70,7 @@ const { title, link = "", client, tools, tldr, image } = Astro.props as Props;
       list-style: none;
       padding: 0;
       color: var(--subtle);
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-weight: 500;
 
       li {

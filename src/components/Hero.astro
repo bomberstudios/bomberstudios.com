@@ -1,0 +1,44 @@
+---
+import { RoundToggle } from "@components/RoundToggle";
+---
+
+<section class="hero">
+  <h1>Ale Muñoz,<br />Product Designer</h1>
+  <p class="pitch">I turn messy product problems into shipped software.</p>
+
+  <p>
+    Fluent in design, business and code, I'm at my best <strong
+      >untangling the moments where teams stop understanding each other</strong
+    >.
+  </p>
+</section>
+
+<style>
+  .hero {
+    max-inline-size: var(--measure);
+    margin: 4rem auto;
+    /* padding: 0 2rem; */
+
+    h1 {
+      font-size: calc(var(--base-size) * 3);
+      font-weight: 200;
+      margin-block: 1rem;
+    }
+    p {
+      font-size: calc(var(--base-size) * 1.2);
+      margin-block: 1rem;
+      font-weight: 300;
+    }
+    p.pitch {
+      font-size: calc(var(--base-size) * 1.6);
+      font-weight: 200;
+      line-height: 1.4;
+      /* text-wrap: pretty; */
+      margin-block: 0;
+
+      strong {
+        font-weight: 600;
+      }
+    }
+  }
+</style>

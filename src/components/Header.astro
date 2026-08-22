@@ -9,9 +9,17 @@ const { sticky } = Astro.props;
 <header class={sticky ? "sticky" : ""}>
   <div class="internal-links">
     <HeaderLink href="/">
-      <Image src={logo} alt="Ale Muñoz" width={40} height={40} loading="eager" />
+      <Image
+        src={logo}
+        alt="Ale Muñoz"
+        width={40}
+        height={40}
+        loading="eager"
+      />
     </HeaderLink>
     <HeaderLink href="/#projects">Projects</HeaderLink>
+    <HeaderLink href="/how-i-work/">How I Work</HeaderLink>
+    <HeaderLink href="/cv-ale-munoz.pdf">CV</HeaderLink>
     <HeaderLink href="https://ale.today?utm_source=bs">Blog ›</HeaderLink>
   </div>
 </header>
